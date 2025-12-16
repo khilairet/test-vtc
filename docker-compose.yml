@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  test-vtc-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: test-vtc-api
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run dev
+    environment:
+      - NODE_ENV=development
+    restart: unless-stopped
+    networks:
+      - test-vtc-network
+
+networks:
+  test-vtc-network:
+    driver: bridge
