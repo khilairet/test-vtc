@@ -53,8 +53,9 @@ export class Server {
         this.instance.setErrorHandler(this.handleError);
         await this.loadMiddlewares();
 
+        const host = process.env.SERVER_HOST ? process.env.SERVER_HOST : "0.0.0.0";
         const port = process.env.SERVER_PORT ? parseInt(process.env.SERVER_PORT, 10) : 8080;
-        await this.instance.listen({ port: port });
+        await this.instance.listen({ port: port, host: host });
         this.rawServer = this.instance.server;
         this.instance.log.info(`Server started on port ${port}`);
 
