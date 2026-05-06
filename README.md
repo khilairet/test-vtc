@@ -5,7 +5,7 @@
 ![Node](https://img.shields.io/badge/node-20.x-brightgreen)
 ![License](https://img.shields.io/badge/license-Private-red)
 
-API REST en TypeScript avec Fastify et une architecture DDD pour le test technique Indy.
+API REST en TypeScript avec Fastify et une architecture DDD.
 
 - Choix de Fastify pour rester proche de la stack de l'entreprise.
 - Architecture DDD avec factories pour moduler facilement providers, logique métier et dépendances.
